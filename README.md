@@ -48,12 +48,32 @@ demo/
 #### Next is to configure the root URLconf in the `mysite` project to include the URLconf defined in `demo.urls`. To do this, added an import for `django.urls.include` in `mysite/urls.py` and insert an `include()` in the `urlpatterns` list
 ![]()
 
-#### Inside the setting which is in the mysite/settings we have to import the os  which allows you to interact with the operating system—things like file paths, environment variables, and directories.
+#### Inside the setting which is in the `mysite/settings` we have to import the `os`  which allows you to interact with the operating system—things like file paths, environment variables, and directories. And update the os in the Template 
 
+![]()
 
+#### Then created the ec2 instance then cloned the repo
 
+#### Exposed the 8080 traffic to the security group inbound rule
 
+#### Then going into the directory where the application is then building the docker image by
+```
+docker build .
+```
+![]()
 
+#### The Django application will be running inside our container at 8000, but we are trying to run the application on ec2 instance,  so we need port mapping. Instead of the command—— docker run -it < containerID> , we have to run 
+```
+docker run -p 8000:8000 -it <containerID>
+```
+![]()
+
+#### And our application is which is a static site is running
+![]()
+
+#### the application will be accessed when we give `/demo` after the URL because it's the context root of the application. The [urls.py](http://urls.py) in the mysite directory will understand that whenever anyone tries to hit the /demo, it will try to serve the content on the demo application..
+
+![]()
 
 
 
